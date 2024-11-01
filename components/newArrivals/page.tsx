@@ -20,11 +20,6 @@ const Page = () => {
 
   cardsRef.current = [];
 
-  const addToRefs = (el) => {
-    if (el && !cardsRef.current.includes(el)) {
-      cardsRef.current.push(el);
-    }
-  };
 
   useGSAP(() => {
     cardsRef.current.forEach((el) => {

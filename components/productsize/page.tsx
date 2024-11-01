@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import './index.css';
 import BigImage from '@/app/assets/arrivals/compressed/shirtbig.png';
 import FirstImage from '@/app/assets/arrivals/compressed/shirtbig.png';

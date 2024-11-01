@@ -1,13 +1,23 @@
 /** @format */
 
-// models/User.js
+// models/User.ts
 
-import mongoose from 'mongoose';
+import mongoose, { Document, Model } from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+// Define IUser interface
+export interface IUser extends Document {
+  email: string;
+  password: string;
+  // Add other user properties here if needed
+}
+
+// Define the Mongoose schema for the User model
+const userSchema = new mongoose.Schema<IUser>({
   email: {
     type: String,
     required: true,
+    unique: true,
+    trim: true,
   },
   password: {
     type: String,
@@ -15,12 +25,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-let User;
-
-try {
-  User = mongoose.model('User');
-} catch {
-  User = mongoose.model('User', userSchema);
-}
+// Add a check to avoid redefining the model during hot-reloading in development
+const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>('User', userSchema);
 
 export default User;

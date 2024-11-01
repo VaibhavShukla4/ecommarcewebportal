@@ -1,4 +1,9 @@
 /** @format */
 
-const { username, password } = process.env;
-export const MONGODB_URI = `mongodb+srv://vaibhavs7312:HuYEByhakDxKx3IL@cluster0.uwcjqgg.mongodb.net/`;
+const { DB_USERNAME, DB_PASSWORD, DB_CLUSTER } = process.env;
+
+if (!DB_USERNAME || !DB_PASSWORD || !DB_CLUSTER) {
+  throw new Error("Please define the DB_USERNAME, DB_PASSWORD, and DB_CLUSTER environment variables.");
+}
+
+export const MONGODB_URI = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTER}.mongodb.net/yourDatabaseName`;

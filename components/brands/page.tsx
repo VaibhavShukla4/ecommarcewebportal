@@ -19,11 +19,6 @@ const Page = () => {
 
   brandsRef.current = [];
 
-  const addToRefs = (el) => {
-    if (el && !brandsRef.current.includes(el)) {
-      brandsRef.current.push(el);
-    }
-  };
 
   useGSAP(() => {
     brandsRef.current.forEach((el) => {

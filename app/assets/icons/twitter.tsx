@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Twitter = ({ fill }) => {
+const Twitter = () => {
   return (
     <svg
       height="1.8em"
