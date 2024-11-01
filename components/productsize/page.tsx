@@ -14,7 +14,7 @@ import Image from 'next/image';
 const page = () => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleCheckboxChange = (e) => {
+  const handleCheckboxChange = (e: { target: { checked: boolean | ((prevState: boolean) => boolean); }; }) => {
     setIsChecked(e.target.checked);
   };
 

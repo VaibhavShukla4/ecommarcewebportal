@@ -2,7 +2,7 @@
 'use client';
 import React, { useState } from 'react';
 import './index.css';
-const page = () => {
+const Page:React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <button>
@@ -41,7 +41,7 @@ const page = () => {
           style={{
             shapeRendering: 'geometricPrecision',
             textRendering: 'geometricPrecision',
-            imageRendering: 'optimizeQuality',
+            imageRendering: 'auto',
             fillRule: 'evenodd',
             clipRule: 'evenodd',
           }}
@@ -71,7 +71,7 @@ const page = () => {
           style={{
             shapeRendering: 'geometricPrecision',
             textRendering: 'geometricPrecision',
-            imageRendering: 'optimizeQuality',
+            imageRendering: 'auto',
             fillRule: 'evenodd',
             clipRule: 'evenodd',
           }}
@@ -101,7 +101,7 @@ const page = () => {
           style={{
             shapeRendering: 'geometricPrecision',
             textRendering: 'geometricPrecision',
-            imageRendering: 'optimizeQuality',
+            imageRendering: 'auto',
             fillRule: 'evenodd',
             clipRule: 'evenodd',
           }}
@@ -130,7 +130,7 @@ const page = () => {
           style={{
             shapeRendering: 'geometricPrecision',
             textRendering: 'geometricPrecision',
-            imageRendering: 'optimizeQuality',
+            imageRendering: 'auto',
             fillRule: 'evenodd',
             clipRule: 'evenodd',
           }}
@@ -160,7 +160,7 @@ const page = () => {
           style={{
             shapeRendering: 'geometricPrecision',
             textRendering: 'geometricPrecision',
-            imageRendering: 'optimizeQuality',
+            imageRendering: 'auto',
             fillRule: 'evenodd',
             clipRule: 'evenodd',
           }}
@@ -182,4 +182,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

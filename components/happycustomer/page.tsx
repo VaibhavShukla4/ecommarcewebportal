@@ -1,6 +1,5 @@
 /** @format */
 'use client';
-/** @format */
 import React, { useState } from 'react';
 import Left from '@/app/assets/icons/left-arrow.svg';
 import Right from '@/app/assets/icons/right-arrow.svg';
@@ -8,6 +7,7 @@ import FullStar from '@/app/assets/arrivals/Full-star.svg';
 import GreenCheck from '@/app/assets/icons/green-check.svg';
 import './index.css';
 import Image from 'next/image';
+
 const Page = () => {
   const totalItems = 6; // Total number of items in the carousel
   const cardWidth = 320; // Width of each card
@@ -44,7 +44,7 @@ const Page = () => {
           <span onClick={handleNext}>
             <Image
               src={Right.src}
-              alt="Previous"
+              alt="Next"
               width={Right.width}
               height={Right.height}
               loading="lazy"
@@ -63,46 +63,44 @@ const Page = () => {
               transition: 'transform 0.5s ease',
             }}
           >
-            {[...Array(totalItems * 2)].map((_, index) => {
-              const actualIndex = (virtualIndex + index) % totalItems; // Calculate the actual index
-              return (
-                <div
-                  key={index}
-                  className={`card ${index === totalItems - 1 ? 'active' : ''}`}
-                >
-                  <div className="star-rating flex">
-                    {[...Array(5)].map((_, starIndex) => (
-                      <span key={starIndex}>
-                        <Image
-                          src={FullStar.src}
-                          alt="Star"
-                          width={FullStar.width}
-                          height={FullStar.height}
-                          loading="lazy"
-                        />
-                      </span>
-                    ))}
-                  </div>
-                  <h3>
-                    Sarah M. &nbsp;
-                    <span>
+            {[...Array(totalItems * 2)].map((_, index) => (
+              <div
+                key={index}
+                className={`card ${index === totalItems - 1 ? 'active' : ''}`}
+              >
+                <div className="star-rating flex">
+                  {[...Array(5)].map((_, starIndex) => (
+                    <span key={starIndex}>
                       <Image
-                        src={GreenCheck.src}
+                        src={FullStar.src}
                         alt="Star"
-                        width={GreenCheck.width}
-                        height={GreenCheck.height}
+                        width={FullStar.width}
+                        height={FullStar.height}
                         loading="lazy"
                       />
                     </span>
-                  </h3>
-                  <p>
-                    "I'm blown away by the quality and style of the clothes I
-                    received from Shop.co. From casual wear to elegant dresses,
-                    every piece I've bought has exceeded my expectations.”
-                  </p>
+                  ))}
                 </div>
-              );
-            })}
+                <h3>
+                  Sarah M. &nbsp;
+                  <span>
+                    <Image
+                      src={GreenCheck.src}
+                      alt="Verified"
+                      width={GreenCheck.width}
+                      height={GreenCheck.height}
+                      loading="lazy"
+                    />
+                  </span>
+                </h3>
+                <p>
+                  &quot;I&apos;m blown away by the quality and style of the
+                  clothes I received from Shop.co. From casual wear to elegant
+                  dresses, every piece I&apos;ve bought has exceeded my
+                  expectations.&rdquo;
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="right-blur"></div>

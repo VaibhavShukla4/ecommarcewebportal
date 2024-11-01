@@ -4,12 +4,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../../lib/Model/user';
+import nextConnect, { NextConnect } from 'next-connect';
 
-// Import nextConnect using `require` and cast it to `any`
-const nextConnect = require('next-connect') as any;
-
-// Initialize handler without adding inline types to `nextConnect`
-const handler = nextConnect();
+// Initialize the handler with the correct types for Next.js API routes
+const handler: NextConnect<NextApiRequest, NextApiResponse> = nextConnect();
 
 // Define the POST handler with explicit typing for `req` and `res`
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
