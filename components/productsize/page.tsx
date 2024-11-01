@@ -11,7 +11,7 @@ import HalfStar from '@/app/assets/arrivals/Half-star.svg';
 import Minus from '@/app/assets/icons/minus.svg';
 import Plus from '@/app/assets/icons/plus.svg';
 import Image from 'next/image';
-const page = () => {
+const Page = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = (e: { target: { checked: boolean | ((prevState: boolean) => boolean); }; }) => {
@@ -203,4 +203,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
