@@ -6,15 +6,16 @@ import './index.css';
 const Page = () => {
   const [login, setLogin] = useState({ email: '', password: '' });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Update the state with new values from the input fields
+    const { name, value } = e.target;
     setLogin({
       ...login,
-      [e.target.name]: e.target.value, // Use name attribute to identify the field
+      [name]: value, // Use name attribute to identify the field
     });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted with:', login);
