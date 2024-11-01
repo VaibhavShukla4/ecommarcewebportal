@@ -5,7 +5,7 @@ import Home from '@/app/users/home/page';
 import Layout from '@/app/users/layout';
 
 
-const page = () => {
+const Page:React.FC = () => {
   return (
     <Layout>
       <Home />
@@ -13,4 +13,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

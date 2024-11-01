@@ -4,6 +4,7 @@ import './index.css';
 import dynamic from 'next/dynamic';
 import { useState, useCallback } from 'react';
 import useIntersectionObserver from '@/app/hooks/useIntersectionObserver'; // adjust the path
+
 const SkeletonLoader = dynamic(() => import('./../../../components/SkeletonLoader/page'), {
   ssr: true,
 });
@@ -33,15 +34,12 @@ const Browse = dynamic(() => import('./../../../components/browse/page'), {
   loading: () => <SkeletonLoader />,
 });
 
-const HappyCustomer = dynamic(
-  () => import('./../../../components/happycustomer/page'),
-  {
-    ssr: true,
-    loading: () => <SkeletonLoader />,
-  },
-);
+const HappyCustomer = dynamic(() => import('./../../../components/happycustomer/page'), {
+  ssr: true,
+  loading: () => <SkeletonLoader />,
+});
 
-const Page = () => {
+const Page: React.FC = () => {
   const [isBannerVisible, setBannerVisible] = useState(false);
   const [isBrandsVisible, setBrandsVisible] = useState(false);
   const [isNewArrivalsVisible, setNewArrivalsVisible] = useState(false);
@@ -49,7 +47,7 @@ const Page = () => {
   const [isBrowseVisible, setBrowseVisible] = useState(false);
   const [isHappyCustomerVisible, setHappyCustomerVisible] = useState(false);
 
-  const handleIntersection = useCallback((entries) => {
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         switch (entry.target.id) {
@@ -82,30 +80,12 @@ const Page = () => {
     threshold: 0.1,
   };
 
-  const bannerRef = useIntersectionObserver(
-    handleIntersection,
-    observerOptions,
-  );
-  const brandsRef = useIntersectionObserver(
-    handleIntersection,
-    observerOptions,
-  );
-  const newArrivalsRef = useIntersectionObserver(
-    handleIntersection,
-    observerOptions,
-  );
-  const topSellingRef = useIntersectionObserver(
-    handleIntersection,
-    observerOptions,
-  );
-  const browseRef = useIntersectionObserver(
-    handleIntersection,
-    observerOptions,
-  );
-  const happyCustomerRef = useIntersectionObserver(
-    handleIntersection,
-    observerOptions,
-  );
+  const bannerRef = useIntersectionObserver(handleIntersection, observerOptions);
+  const brandsRef = useIntersectionObserver(handleIntersection, observerOptions);
+  const newArrivalsRef = useIntersectionObserver(handleIntersection, observerOptions);
+  const topSellingRef = useIntersectionObserver(handleIntersection, observerOptions);
+  const browseRef = useIntersectionObserver(handleIntersection, observerOptions);
+  const happyCustomerRef = useIntersectionObserver(handleIntersection, observerOptions);
 
   return (
     <section>

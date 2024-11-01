@@ -2,8 +2,16 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-const Page = () => {
-  const [data, setData] = useState([]);
+interface Product {
+  name: string;
+  price: number;
+  compony: string; // Assuming `compony` is the intended spelling; change to `company` if needed
+  color: string;
+  category: string;
+}
+
+const Page: React.FC = () => {
+  const [data, setData] = useState<Product[]>([]); // Apply Product[] type to data state
 
   useEffect(() => {
     fetchData();
@@ -19,7 +27,7 @@ const Page = () => {
       setData(responseData.data); // Update state with fetched data
       console.log(responseData); // Logging fetched data for debugging
     } catch (error) {
-      console.error('Error fetching data:', error.message);
+      console.error('Error fetching data:', error);
     }
   };
 
@@ -38,11 +46,11 @@ const Page = () => {
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <th>{item.name}</th>
-              <th>{item.price}</th>
-              <th>{item.compony}</th>
-              <th>{item.color}</th>
-              <th>{item.category}</th>
+              <td>{item.name}</td>
+              <td>{item.price}</td>
+              <td>{item.compony}</td>
+              <td>{item.color}</td>
+              <td>{item.category}</td>
             </tr>
           ))}
         </tbody>

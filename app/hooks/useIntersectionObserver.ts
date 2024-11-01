@@ -1,14 +1,14 @@
+'use client'
 import { useEffect, useRef } from 'react';
 
-// Define types for the callback and options parameters
 const useIntersectionObserver = (
   callback: (entries: IntersectionObserverEntry[]) => void,
   options?: IntersectionObserverInit
 ) => {
-  const ref = useRef<Element | null>(null);
+  // Specify HTMLDivElement to match the type expected in the component
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Check if IntersectionObserver is supported
     if (!('IntersectionObserver' in window)) {
       console.warn('IntersectionObserver is not supported in this browser.');
       return;
