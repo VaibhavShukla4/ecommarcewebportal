@@ -1,0 +1,29 @@
+/**
+ * components/CustomCursor.module.css
+ *
+ * @format
+ */
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  /* background-color: black; */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+
+.cursor .arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid rgb(100, 255, 242);
+  transform: rotate(150deg);
+}
+
+.cursor.hover .arrow {
+  border-top: 20px solid red; /* Change the color when hovering over links */
+}

@@ -1,0 +1,347 @@
+/** @format */
+
+.footer-container {
+  position: relative;
+  margin: 70px 0px 0px 0px;
+  padding: 100px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  /* height: 550px; */
+}
+
+.black-section {
+  position: absolute;
+  background: #000000;
+  display: flex;
+  padding: 50px;
+  border-radius: 30px;
+  top: 0;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+
+.black-section > p {
+  font-family: Integral CF;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fff;
+}
+
+.input-box {
+  background: #ffff;
+  width: 100%;
+  max-width: 350px;
+  min-width: 300px;
+  height: 45px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding-inline: 22px;
+}
+
+.input-box > input {
+  width: -webkit-fill-available;
+  height: inherit;
+  border: 0;
+  outline: none;
+  padding-inline: 12px;
+}
+
+.subscribe {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscribe > button {
+  background: #ffff;
+  width: 100%;
+  max-width: 350px;
+  min-width: 300px;
+  height: 45px;
+  border-radius: 30px;
+  font-family: Satoshi;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+  margin-top: 15px;
+}
+
+.shop-details {
+  width: -webkit-fill-available;
+  /* height: 400px; */
+  padding: 150px 0px 40px 0px;
+  background: #f0f0f0;
+}
+
+.social {
+  width: 100%;
+  max-width: 270px;
+  min-width: min-content;
+}
+
+.social > h3 {
+  font-family: Integral CF;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.social > p {
+  font-family: Satoshi;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  padding-top: 12px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  padding-top: 30px;
+}
+
+span > .social-logo {
+  border: 1px solid #00000033;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+span > .social-logo:hover {
+  background: #ffff;
+}
+
+.shop-link {
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px;
+  row-gap: 20px;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  min-width: 120px;
+  max-width: 150px;
+}
+
+.company > h5 {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 3px;
+  text-align: left;
+}
+
+.company > .link {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.copy-right {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 120px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.payment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+
+.right-copy > p {
+  font-family: Satoshi;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #00000099;
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: '';
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+
+.twitter-icon {
+  fill: #000000; /* Initial color, Twitter's brand color */
+  transition: fill 0.2s ease-in-out; /* Smooth transition for the fill color */
+}
+
+.twitter-icon:hover {
+  fill: #ffff; /* Dark color on hover */
+}
+
+/* media query here  */
+
+@media (max-width: 991px) {
+  .shop-link {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .black-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shop-link {
+    padding: 150px 50px 30px 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-link {
+    padding: 175px 50px 30px 50px;
+  }
+}
+
+@media (max-width: 425px) {
+  .input-box {
+    min-width: 250px;
+  }
+
+  .black-section {
+    padding: 20px;
+  }
+
+  .black-section > p {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .shop-link {
+    padding: 75px 20px 25px 20px;
+  }
+
+  .subscribe {
+    width: -webkit-fill-available;
+  }
+
+  .subscribe > button {
+    min-width: 270px;
+  }
+
+  .new-arrivals > span {
+    font-size: 45px;
+  }
+
+  .copy-right {
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .company {
+    max-width: 130px;
+  }
+}

@@ -1,0 +1,93 @@
+/** @format */
+
+.arrow-btn {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 25px;
+}
+
+.card {
+  border: 1px solid #0000001a;
+  min-width: 300px;
+  max-width: 360px;
+  width: 100%;
+  padding: 20px 25px;
+  border-radius: 15px;
+}
+
+.card > h3 {
+  display: flex;
+  font-family: Satoshi;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.card > p {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #00000099;
+}
+
+.blur-point {
+  position: relative;
+}
+
+.blur-point > .left-blur {
+  height: -webkit-fill-available;
+  background: #f1f1f1;
+  opacity: 0.9;
+  width: 100%;
+  max-width: 200px;
+  position: absolute;
+  left: 0;
+  z-index: 50;
+}
+
+.blur-point > .right-blur {
+  height: -webkit-fill-available;
+  background: #f1f1f1;
+  opacity: 0.9;
+  width: 100%;
+  max-width: 200px;
+  position: absolute;
+  right: 0;
+  filter: blur(5px);
+}
+
+.row {
+  display: flex;
+  overflow-x: hidden; /* Hide overflowing cards */
+  transition: transform 0.5s ease; /* Apply transition to transform property */
+}
+
+.card {
+  width: 600px; /* Adjust width as needed */
+  flex: 0 auto;
+  margin-right: 20px;
+  transition: transform 0.5s ease;
+}
+
+.row {
+  overflow: hidden;
+}
+
+.cardss {
+  transition: transform 0.5s ease; /* Adjust the duration and timing function as needed */
+}
+
+@media (max-width: 767px) {
+  .blur-point > .left-blur {
+    display: none;
+  }
+  .blur-point > .right-blur {
+    display: none;
+  }
+}

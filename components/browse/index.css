@@ -1,0 +1,155 @@
+/** @format */
+
+.browse {
+  width: fit-content;
+  background: #f0f0f0;
+  border-radius: 35px;
+}
+
+.browse > span {
+  font-family: Integral CF;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 50px 0px;
+  width: -webkit-fill-available;
+  display: inline-block;
+}
+
+.image-section {
+  display: flex;
+  column-gap: 25px;
+  width: -webkit-fill-available;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 25px;
+}
+
+.image-section > #casual,
+#formal,
+#party,
+#gym {
+  position: relative;
+}
+
+#casual > span {
+  font-family: Satoshi;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0em;
+  text-align: left;
+  top: 12px;
+  position: absolute;
+  left: 25px;
+}
+
+#formal > span {
+  font-family: Satoshi;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0em;
+  text-align: left;
+  top: 12px;
+  position: absolute;
+  left: 25px;
+}
+
+#party > span {
+  font-family: Satoshi;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0em;
+  text-align: left;
+  top: 12px;
+  position: absolute;
+  left: 25px;
+}
+
+#gym > span {
+  font-family: Satoshi;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0em;
+  text-align: left;
+  top: 12px;
+  position: absolute;
+  left: 25px;
+}
+/* #casual,
+#formal,
+#party,
+#gym,
+img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: max-content;
+  height: 100%;
+  max-height: max-content;
+} */
+
+#casual > img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: max-content;
+  height: 100%;
+  max-height: max-content;
+}
+
+#formal > img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: max-content;
+  height: 100%;
+  max-height: max-content;
+}
+
+#party > img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: max-content;
+  height: 100%;
+  max-height: max-content;
+}
+
+#gym > img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: max-content;
+  height: 100%;
+  max-height: max-content;
+}
+
+.browse-img {
+  padding: 0px 60px 60px 60px;
+  display: flex;
+  row-gap: 25px;
+  flex-direction: column;
+}
+
+/* media query here */
+
+@media (max-width: 991px) {
+  .image-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-section > #casual,
+  #formal,
+  #party,
+  #gym {
+    height: 300px;
+  }
+}
+
+@media (max-width: 425px) {
+  .browse-img {
+    padding: 0px 10px 60px 10px;
+  }
+}
