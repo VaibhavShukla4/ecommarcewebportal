@@ -2,10 +2,13 @@
 'use client';
 import React, { useState } from 'react';
 import './index.css';
-const Page:React.FC = () => {
+interface ShopNowBtnProps {
+  className?: string;
+}
+const Page: React.FC<ShopNowBtnProps> = ({className }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <button>
+    <button  className={className}>
       Shop Now
       <div
         className="star-1"
@@ -182,4 +185,4 @@ const Page:React.FC = () => {
   );
 };
 
-export default Page;
+export default React.memo(Page);

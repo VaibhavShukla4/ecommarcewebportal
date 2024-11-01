@@ -16,7 +16,7 @@ const ShopNowBtn = dynamic(() => import('./../ShopNowBtn/page'), {
 });
 gsap.registerPlugin(ScrollTrigger);
 
-const Page = () => {
+const Page:React.FC = () => {
   const textRef = useRef(null);
   const bigStarRef = useRef(null);
   const smallStarRef = useRef(null);
