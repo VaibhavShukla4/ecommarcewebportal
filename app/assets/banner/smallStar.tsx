@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const smallStar = () => {
+const Page:React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const smallStar = () => {
   );
 };
 
-export default smallStar;
+export default Page;

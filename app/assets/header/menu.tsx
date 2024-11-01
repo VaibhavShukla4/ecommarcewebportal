@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const menu = () => {
+const Page:React.FC = () => {
   return (
     <React.Fragment>
       <svg
@@ -21,4 +21,4 @@ const menu = () => {
   );
 };
 
-export default menu;
+export default Page;

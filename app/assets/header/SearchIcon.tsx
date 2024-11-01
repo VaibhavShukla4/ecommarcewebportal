@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const SearchIcon = () => {
+const Page:React.FC = () => {
   return (
     <React.Fragment>
       <svg
@@ -22,4 +22,4 @@ const SearchIcon = () => {
   );
 };
 
-export default SearchIcon;
+export default Page;

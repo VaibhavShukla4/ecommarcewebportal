@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const profile = () => {
+const Page:React.FC = () => {
   return (
     <React.Fragment>
       <svg
@@ -21,4 +21,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Page;

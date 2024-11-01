@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const versace = () => {
+const Page:React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ const versace = () => {
   );
 };
 
-export default versace;
+export default Page;

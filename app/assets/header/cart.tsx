@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const cart = () => {
+const Page:React.FC = () => {
   return (
     <React.Fragment>
       <svg
@@ -21,4 +21,4 @@ const cart = () => {
   );
 };
 
-export default cart;
+export default Page;

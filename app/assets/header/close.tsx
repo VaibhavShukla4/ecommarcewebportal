@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const close = () => {
+const Page:React.FC = () => {
   return (
     <React.Fragment>
       <svg
@@ -22,4 +22,4 @@ const close = () => {
   );
 };
 
-export default close;
+export default Page;

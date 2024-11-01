@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Twitter = () => {
+const Page:React.FC = () => {
   return (
     <svg
       height="1.8em"
@@ -15,4 +15,4 @@ const Twitter = () => {
   );
 };
 
-export default Twitter;
+export default Page;
