@@ -6,7 +6,7 @@ import './index.css';
 const Page = () => {
   const [login, setLogin] = useState({ email: '', password: '' });
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     // Update the state with new values from the input fields
     setLogin({
       ...login,
@@ -14,7 +14,7 @@ const Page = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted with:', login);
