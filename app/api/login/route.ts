@@ -4,26 +4,23 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../../lib/Model/user';
-import nextConnect, { NextConnect } from 'next-connect';
+import { NextResponse } from 'next/server';
 
-// Initialize the handler with the correct types for Next.js API routes
-const handler: NextConnect<NextApiRequest, NextApiResponse> = nextConnect();
-
-// Define the POST handler with explicit typing for `req` and `res`
-handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
-  const { email, password } = req.body;
+// Define the main API function
+export async function POST(req: Request) {
+  const { email, password } = await req.json(); // Parse JSON directly from the request
 
   try {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(401).json({ msg: 'User not found!' });
+      return NextResponse.json({ msg: 'User not found!' }, { status: 401 });
     }
 
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
-      return res.status(401).json({ msg: 'Incorrect Password!' });
+      return NextResponse.json({ msg: 'Incorrect Password!' }, { status: 401 });
     }
 
     const token = jwt.sign(
@@ -34,11 +31,9 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
       }
     );
 
-    res.status(200).json({ token });
+    return NextResponse.json({ token });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ msg: 'Internal Server Error!' });
+    return NextResponse.json({ msg: 'Internal Server Error!' }, { status: 500 });
   }
-});
-
-export default handler;
+}
