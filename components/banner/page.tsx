@@ -111,7 +111,7 @@ const Page:React.FC = () => {
               layout="responsive"
             />
             <span id="big-star">
-              <BigStar />
+              <BigStar  />
             </span>
             <span id="small-star">
               <SmallStar />

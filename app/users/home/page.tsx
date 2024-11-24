@@ -86,9 +86,12 @@ const Page: React.FC = () => {
   const topSellingRef = useIntersectionObserver(handleIntersection, observerOptions);
   const browseRef = useIntersectionObserver(handleIntersection, observerOptions);
   const happyCustomerRef = useIntersectionObserver(handleIntersection, observerOptions);
+// (function(){
+//   document.title='home page'
+// })()
 
   return (
-    <section>
+    <section> 
       <div id="banner" ref={bannerRef}>
         {isBannerVisible && <BannerComponent />}
       </div>

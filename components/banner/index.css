@@ -97,6 +97,7 @@
   min-height: -webkit-fill-available;
   width: 100%;
   max-width: 40vw;
+  align-items: center;
 }
 
 .image-section > #big-star {
@@ -178,7 +179,7 @@
 
 @media (max-width: 991px) {
   .photo-section {
-    width: fit-content;
+    width: -webkit-fill-available;
   }
 }
 
@@ -192,5 +193,12 @@
   .heading > p {
     font-size: 9vw;
     line-height: 10vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-section > #big-star,
+  .image-section > #small-star {
+    display: none;
   }
 }

@@ -38,7 +38,7 @@ const Page = () => {
         <span>BROWSE BY DRESS STYLE</span>
         <div className="browse-img">
           <div className="image-section">
-            <div id="casual">
+            <div id="casual" className='w-[37%]'>
               <Image
                 src={Casual.src}
                 alt="Casual Style"
@@ -50,8 +50,9 @@ const Page = () => {
               />
               <span>Casual</span>
             </div>
-            <div id="formal">
+            <div id="formal" className='w-[max-content]'>
               <Image
+              className='h-[-webkit-fill-available!important]'
                 src={Formal.src}
                 alt="Formal Style"
                 layout="responsive"
@@ -76,7 +77,7 @@ const Page = () => {
               />
               <span>Party</span>
             </div>
-            <div id="gym">
+            <div  id="gym">
               <Image
                 src={Gym.src}
                 alt="Gym Style"

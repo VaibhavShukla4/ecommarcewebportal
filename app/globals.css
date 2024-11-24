@@ -240,6 +240,7 @@ a {
   letter-spacing: 0em;
   text-align: left;
   padding: 10px 0px;
+  color: var(--neutral-black);
 }
 
 .cards > img {
@@ -254,6 +255,7 @@ a {
   display: flex;
   width: 50%;
   column-gap: 12px;
+  color: var(--neutral-black);
 }
 
 .price > #discount {
@@ -287,6 +289,17 @@ a {
   border-radius: 40px;
   background: #fff;
   font-weight: 500;
+}
+
+.star-rating > .rating {
+  font-family: Satoshi;
+  color: #000008;
+}
+
+.prices {
+  font-family: Satoshi;
+  color: #000008;
+  font-size: 20px;
 }
 /* new arrivals  comman style */
 @media (prefers-color-scheme: dark) {

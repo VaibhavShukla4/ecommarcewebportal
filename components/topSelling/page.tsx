@@ -59,7 +59,7 @@ const Page = () => {
               </span>
             ))}
             &nbsp;&nbsp;&nbsp;
-            <p>4.5/5</p>
+             <span className='rating'>3.5/<span className='text-[#747171]'>5</span></span>
           </div>
           <div className="price">
             <h3>$120</h3>
@@ -89,7 +89,7 @@ const Page = () => {
               </span>
             ))}
             &nbsp;&nbsp;&nbsp;
-            <p>3.5/5</p>
+            <span className='rating'>3.5/<span className='text-[#747171]'>5</span></span>
           </div>
           <div className="price">
             <h3>$120</h3>
@@ -117,7 +117,7 @@ const Page = () => {
               </span>
             ))}
             &nbsp;&nbsp;&nbsp;
-            <p>4.5/5</p>
+             <span className='rating'>3.5/<span className='text-[#747171]'>5</span></span>
           </div>
           <div className="price">
             <h3>$120</h3>
@@ -145,11 +145,9 @@ const Page = () => {
               </span>
             ))}
             &nbsp;&nbsp;&nbsp;
-            <p>4.5/5</p>
+             <span className='rating'>3.5/<span className='text-[#747171]'>5</span></span>
           </div>
-          <div className="price">
-            <h3>$120</h3>
-          </div>
+            <span className='text-[600] text-[black]'>$120</span>
         </div>
       </div>
       <div className="view-btn-container">

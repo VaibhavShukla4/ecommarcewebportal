@@ -30,9 +30,9 @@ const Page = () => {
   return (
     <section>
       <div className="new-arrivals two-div">
-        <span>OUR HAPPY CUSTOMERS</span>
+        <span className="w-[auto!important]">OUR HAPPY CUSTOMERS</span>
         <div className="arrow-btn">
-          <span onClick={handlePrev}>
+          <span onClick={handlePrev} className='cursor-pointer'>
             <Image
               src={Left.src}
               alt="Previous"
@@ -41,7 +41,7 @@ const Page = () => {
               loading="lazy"
             />
           </span>
-          <span onClick={handleNext}>
+          <span onClick={handleNext} className='cursor-pointer'>
             <Image
               src={Right.src}
               alt="Next"

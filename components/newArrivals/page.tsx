@@ -50,7 +50,7 @@ const Page = () => {
             loading="lazy"
           />
           <h5>T-shirt with Tape Details</h5>
-          <div className="star-rating flex">
+          <div className="flex gap-[1px] items-center">
             <span>
               <Image
                 src={FullStar.src}
@@ -97,10 +97,10 @@ const Page = () => {
               />
             </span>
             &nbsp;&nbsp;&nbsp;
-            <p>4.5/5</p>
+            <span  className='rating'>4.5/<span className="text-[#747171]">5</span></span>
           </div>
           <div className="price">
-            <h3>$120</h3>
+            <span className='prices'>$120</span>
             <h3 id="discount">$120</h3>
             <span>-20%</span>
           </div>
@@ -114,7 +114,7 @@ const Page = () => {
             loading="lazy"
           />
           <h5>Skinny Fit Jeans</h5>
-          <div className="star-rating flex">
+          <div className="flex gap-[1px] items-center">
             <span>
               <Image
                 src={FullStar.src}
@@ -161,7 +161,7 @@ const Page = () => {
               />
             </span>
             &nbsp;&nbsp;&nbsp;
-            <p>3.5/5</p>
+            <span>3.5/<span className="text-[#747171]">5</span></span>
           </div>
           <div className="price">
             <h3>$120</h3>
@@ -176,7 +176,7 @@ const Page = () => {
             loading="lazy"
           />
           <h5>Checkered Shirt</h5>
-          <div className="star-rating flex">
+          <div className="flex gap-[1px] items-center">
             <span>
               <Image
                 src={FullStar.src}
@@ -223,7 +223,7 @@ const Page = () => {
               />
             </span>
             &nbsp;&nbsp;&nbsp;
-            <p>4.5/5</p>
+            <span>4.5/<span className="text-[#747171]">5</span></span>
           </div>
           <div className="price">
             <h3>$120</h3>
@@ -238,7 +238,7 @@ const Page = () => {
             loading="lazy"
           />
           <h5>Sleeve Striped T-shirt</h5>
-          <div className="star-rating flex">
+          <div className="flex gap-[1px] items-center">
             <span>
               <Image
                 src={FullStar.src}
@@ -285,7 +285,7 @@ const Page = () => {
               />
             </span>
             &nbsp;&nbsp;&nbsp;
-            <p>4.5/5</p>
+            <span>4.5/<span className="text-[#747171]">5</span></span>
           </div>
           <div className="price">
             <h3>$120</h3>
