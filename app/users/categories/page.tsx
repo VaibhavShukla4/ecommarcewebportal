@@ -48,7 +48,7 @@
             <span className="satoshi font-[700] text-[#00000] text-[18px]">
               Filters
             </span>
-            <img
+            <Image
               src={Filter.src}
               width={Filter.width}
               height={Filter.height}
@@ -238,7 +238,7 @@
                   Most Popular <IoIosArrowDown />
                 </span>
               </div>
-              <img onClick={()=>setShowFilter(true)} className='hidden max-[767px]:block' src={RoundFill.src} width={RoundFill.width} height={RoundFill.height} alt="" />
+              <Image onClick={()=>setShowFilter(true)} className='hidden max-[767px]:block' src={RoundFill.src} width={RoundFill.width} height={RoundFill.height} alt="" />
             </div>
           </div>
           <div className="grid grid-cols-3 max-[520px]:grid-cols-1 max-[767px]:grid-cols-2 max-[767px]:mx-auto  max-[991px]:grid-cols-2 max-[1200px]:grid-cols-3 gap-6 py-4">
