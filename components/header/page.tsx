@@ -38,7 +38,7 @@ const Page: React.FC = () => {
     <header>
       <section className="big-header">
         <div className="logo">
-          <h3>SHOP.CO</h3>
+          <h3 className='integral_cf'>SHOP.CO</h3>
         </div>
         <div className="navigation">
           <span className="flex">
@@ -66,7 +66,7 @@ const Page: React.FC = () => {
           <span onClick={handleOpenSidebar}>
             <Menu />
           </span>
-          <h3>SHOP.CO</h3>
+          <h3 className='integral_cf'>SHOP.CO</h3>
         </div>
         <div className="profile-cart-section">
           <span><Cart /></span>

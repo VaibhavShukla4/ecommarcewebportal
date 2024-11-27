@@ -34,7 +34,7 @@ const page : React.FC= () => {
       <div className="shop-details">
         <div className="shop-link">
           <div className="social">
-            <h3>SHOP.CO</h3>
+            <h3 className='integral_cf'>SHOP.CO</h3>
             <p>
               We have clothes that suits your style and which you’re proud to
               wear. From women to men.

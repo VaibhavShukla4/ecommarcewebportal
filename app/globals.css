@@ -18,7 +18,7 @@
 /** @format */
 @font-face {
   font-family: 'Integral CF';
-  src: url('/public/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  src: url('/public/Fontspring-DEMO-integralcf-medium.otf') format('opentype');
 }
 
 @font-face {
@@ -300,6 +300,17 @@ a {
   font-family: Satoshi;
   color: #000008;
   font-size: 20px;
+}
+
+.filters {
+  border: 1px solid #0000001a;
+}
+
+.satoshi {
+  font-family: Satoshi;
+}
+.integral_cf {
+  font-family: Integral CF;
 }
 /* new arrivals  comman style */
 @media (prefers-color-scheme: dark) {

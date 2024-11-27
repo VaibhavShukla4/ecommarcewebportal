@@ -5,6 +5,12 @@
   src: url(./../../public/Satoshi-Regular.otf);
 }
 
+@font-face {
+  font-family: 'Integral CF';
+  src: url('./../../public/Fontspring-DEMO-integralcf-medium.otf')
+    format('opentype');
+}
+
 .big-header {
   background: #ffff;
   width: -webkit-fill-available;
@@ -23,7 +29,6 @@
 
 .logo > span {
   padding: 20px;
-  margin-top: 10px;
 }
 
 .logo > h3 {

@@ -11,16 +11,35 @@ import HalfStar from '@/app/assets/arrivals/Half-star.svg';
 import Minus from '@/app/assets/icons/minus.svg';
 import Plus from '@/app/assets/icons/plus.svg';
 import Image from 'next/image';
+import { MdOutlineArrowForwardIos } from 'react-icons/md';
 const Page = () => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleCheckboxChange = (e: { target: { checked: boolean | ((prevState: boolean) => boolean); }; }) => {
-    setIsChecked(e.target.checked);
-  };
+  // const handleCheckboxChange = (e: { target: { checked: boolean | ((prevState: boolean) => boolean); }; }) => {
+  //   setIsChecked(e.target.checked);
+  // };
 
+    const colors = [
+    '#00FF00', // Green
+    '#FF0000', // Red
+    '#FFFF00', // Yellow
+    ];
+
+  const [selectedColor, setSelectedColor] = useState('');
+  const handleColorSelect = (color: React.SetStateAction<string>) => {
+    setSelectedColor(color);
+  };
   console.log(isChecked);
   return (
-    <section className="product-details">
+    <section className="max-w-[1200px] mx-auto max-[1200px]:px-[10px]">
+      <div className="filters my-5"></div>
+      <div className="flex items-center mb-[20px] gap-2 max-[767px]:text-[12px]">
+        <span className="text-[#00000099] max-[767px]:text-[12px]">Home</span>
+        <MdOutlineArrowForwardIos fontSize={15} className='max-[767px]:text-[12px]' />
+        Casual
+      </div>
+      <div className="product-details">
+      
       <div className="product-image-section">
         <div className="three-image">
           <Image
@@ -58,8 +77,8 @@ const Page = () => {
         </div>
       </div>
       <div className="product-details-section">
-        <h3>One Life Graphic T-shirt</h3>
-        <div className="star-rating flex">
+        <h3 className='mb-2'>One Life Graphic T-shirt</h3>
+        <div className="star-rating flex mb-2">
           <span>
             <Image
               src={FullStar.src}
@@ -103,80 +122,58 @@ const Page = () => {
           &nbsp;&nbsp;&nbsp;
           <p>4.5/5</p>
         </div>
-        <div className="price">
-          <h3>$120</h3>
-          <h3 id="discount">$120</h3>
-          <span>-20%</span>
+        <div className="flex items-center gap-2 mb-2">
+          <span className='satoshi text-[#000000] font-bold text-[20px]'>$120</span>
+          <span className='satoshi text-[#0000004D] font-bold text-[20px] line-through'>$300</span>
+          <span className='satoshi text-[#FF3333] bg-[#FF33331A] font-bold text-[12px] px-[15px] py-[7px] rounded-full'>-20%</span>
         </div>
-        <p>
+        <p className='satoshi text-[#00000099]'>
           This graphic t-shirt which is perfect for any occasion. Crafted from a
           soft and breathable fabric, it offers superior comfort and style.
         </p>
         <div className="break-line"></div>
-        <span>Select Colors</span>
-        <div className="select-color">
-          <div className="check-color">
-            <label className="container">
-              <input
-                type="checkbox"
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-              />
+        <span className='satoshi text-[#00000099]'>Select Colors</span>
+         <div className="flex gap-2 mt-2">
+            {colors.map((color, index) => (
               <div
-                className="checkmark"
-                style={
-                  isChecked
-                    ? { backgroundColor: '#4F4631' }
-                    : { backgroundColor: '#e8e8e8' }
-                }
-              ></div>
-            </label>
+                key={index}
+                className={`h-10 w-10 rounded-full cursor-pointer border-2 flex items-center justify-center ${
+                  selectedColor === color
+                    ? 'border-blue-500'
+                    : 'border-transparent'
+                }`}
+                style={{ backgroundColor: color }}
+                onClick={() => handleColorSelect(color)}
+              >
+                {selectedColor === color && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2.5"
+                    stroke="white"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                )}
+              </div>
+            ))}
           </div>
-          <div className="check-color">
-            <label className="container">
-              <input
-                type="checkbox"
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-              />
-              <div
-                className="checkmark"
-                style={
-                  isChecked
-                    ? { backgroundColor: '#31344F' }
-                    : { backgroundColor: '#e8e8e8' }
-                }
-              ></div>
-            </label>
-          </div>
-          <div className="check-color">
-            <label className="container">
-              <input
-                type="checkbox"
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-              />
-              <div
-                className="checkmark"
-                style={
-                  isChecked
-                    ? { backgroundColor: '#31344F' }
-                    : { backgroundColor: '#e8e8e8' }
-                }
-              ></div>
-            </label>
-          </div>
-        </div>
         <div className="break-line"></div>
-        <span>Choose Size</span>
+        <span className='satoshi text-[#00000099]'>Choose Size</span>
         <div className="size-btn">
-          <span>Small</span>
+          <span className='satoshi' >Small</span>
           <span>Medium</span>
           <span>Large</span>
           <span>X-Large</span>
         </div>
         <div className="break-line"></div>
-        <div className="size-btn">
+        <div className="size-btn max-w-[-webkit-fill-available!important]">
           <div className="quantity">
             <span>
               <Image
@@ -199,7 +196,9 @@ const Page = () => {
           <button>Add to Cart</button>
         </div>
       </div>
+    </div>
     </section>
+    
   );
 };
 
