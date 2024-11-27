@@ -13,7 +13,7 @@ import Plus from '@/app/assets/icons/plus.svg';
 import Image from 'next/image';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 const Page = () => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked] = useState(false);
 
   // const handleCheckboxChange = (e: { target: { checked: boolean | ((prevState: boolean) => boolean); }; }) => {
   //   setIsChecked(e.target.checked);

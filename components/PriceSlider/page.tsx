@@ -5,7 +5,7 @@ const PriceRangeSlider = ({ min = 0, max = 1000 }) => {
   const [minValue, setMinValue] = useState(min);
   const [maxValue, setMaxValue] = useState(max);
 
-   const [products, setProducts] = useState([
+   const [products] = useState([
     { id: 1, name: "Product A", price: 100 },
     { id: 2, name: "Product B", price: 200 },
     { id: 3, name: "Product C", price: 300 },
@@ -13,7 +13,7 @@ const PriceRangeSlider = ({ min = 0, max = 1000 }) => {
   ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
-
+console.log(filteredProducts)
   const handleRangeChange = ([min, max]) => {
     const filtered = products.filter(
       (product) => product.price >= min && product.price <= max
