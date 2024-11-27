@@ -1,11 +1,12 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
 
 const PriceRangeSlider = ({ min = 0, max = 1000 }) => {
   const [minValue, setMinValue] = useState(min);
   const [maxValue, setMaxValue] = useState(max);
 
-   const [products] = useState([
+  const [products] = useState([
     { id: 1, name: "Product A", price: 100 },
     { id: 2, name: "Product B", price: 200 },
     { id: 3, name: "Product C", price: 300 },
@@ -13,20 +14,22 @@ const PriceRangeSlider = ({ min = 0, max = 1000 }) => {
   ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
-console.log(filteredProducts)
-  const handleRangeChange = ([min, max]) => {
+  console.log(filteredProducts);
+
+  const handleRangeChange = ([min, max]: [number, number]) => {
     const filtered = products.filter(
       (product) => product.price >= min && product.price <= max
     );
     setFilteredProducts(filtered);
   };
-  const handleMinChange = (e: { target: { value: any; }; }) => {
+
+  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Math.min(Number(e.target.value), maxValue - 1); // Ensure min is less than max
     setMinValue(value);
     handleRangeChange([value, maxValue]);
   };
 
-  const handleMaxChange = (e: { target: { value: any; }; }) => {
+  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Math.max(Number(e.target.value), minValue + 1); // Ensure max is greater than min
     setMaxValue(value);
     handleRangeChange([minValue, value]);
