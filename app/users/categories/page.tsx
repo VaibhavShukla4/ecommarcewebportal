@@ -1,35 +1,36 @@
-/** @format */
-'use client';
-import React, { useState } from 'react';
-import { MdOutlineArrowForwardIos } from 'react-icons/md';
-import Filter from '@/app/assets/categories/filter.svg';
-import RoundFill from '@/app/assets/categories/round-filter.svg';
-import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';import { IoClose } from "react-icons/io5";
+  /** @format */
+  'use client';
+  import React, { useState } from 'react';
+  import { MdOutlineArrowForwardIos } from 'react-icons/md';
+  import Filter from '@/app/assets/categories/filter.svg';
+  import RoundFill from '@/app/assets/categories/round-filter.svg';
+  import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';import { IoClose } from "react-icons/io5";
 
-import PriceSlider from '@/components/PriceSlider/page';
-import Shirt from '@/app/assets/arrivals/compressed/t-shirt-black.png';
-// import Jeans from '@/app/assets/arrivals/compressed/blue-jeans.png';
-// import Check from '@/app/assets/arrivals/compressed/check-shirt.png';
-// import Sleeve from '@/app/assets/arrivals/compressed/sleeve-less-shirt.png';
-import FullStar from '@/app/assets/arrivals/Full-star.svg';
-import HalfStar from '@/app/assets/arrivals/Half-star.svg';
-import Image from 'next/image';
-const page = () => {
-  const colors = [
-    '#00FF00', // Green
-    '#FF0000', // Red
-    '#FFFF00', // Yellow
-    '#FFA500', // Orange
-    '#00FFFF', // Cyan
-    '#0000FF', // Blue
-    '#800080', // Purple
-    '#FF00FF', // Magenta
-    '#FFFFFF', // White
-    '#000000', // Black
-  ];
+  import PriceSlider from '@/components/PriceSlider/page';
+  import Shirt from '@/app/assets/arrivals/compressed/t-shirt-black.png';
+  // import Jeans from '@/app/assets/arrivals/compressed/blue-jeans.png';
+  // import Check from '@/app/assets/arrivals/compressed/check-shirt.png';
+  // import Sleeve from '@/app/assets/arrivals/compressed/sleeve-less-shirt.png';
+  import FullStar from '@/app/assets/arrivals/Full-star.svg';
+  import HalfStar from '@/app/assets/arrivals/Half-star.svg';
+  import Image from 'next/image';
+  const Page = () => {
+    const colors = [
+      '#00FF00', // Green
+      '#FF0000', // Red
+      '#FFFF00', // Yellow
+      '#FFA500', // Orange
+      '#00FFFF', // Cyan
+      '#0000FF', // Blue
+      '#800080', // Purple
+      '#FF00FF', // Magenta
+      '#FFFFFF', // White
+      '#000000', // Black
+    ];
 
   const [selectedColor, setSelectedColor] = useState('');
-const [showFilter, setShowFilter] = useState(false)
+  const [showFilter, setShowFilter] = useState(false);
+
   const handleColorSelect = (color: React.SetStateAction<string>) => {
     setSelectedColor(color);
   };
@@ -927,4 +928,4 @@ const [showFilter, setShowFilter] = useState(false)
   );
 };
 
-export default page;
+export default Page;

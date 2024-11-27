@@ -4,7 +4,7 @@
 import React from 'react';
 import './index.css';
 import ProductSize from './../../../components/productsize/page';
-const page = () => {
+const Page = () => {
   return (
     <div className={''}>
       <ProductSize />
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
