@@ -6,7 +6,7 @@ import './index.css';
 // import FirstImage from '@/app/assets/arrivals/compressed/shirtbig.png';
 // import SecondImage from '@/app/assets/arrivals/compressed/shirtblacklogo.png';
 // import ThreeImage from '@/app/assets/arrivals/compressed/shirtbrown.png';
-import FullStar from '@/app/assets/arrivals/Full-star.svg';
+import FullStar from '@/app/assets/arrivals/Full-star.svg'; 
 import HalfStar from '@/app/assets/arrivals/Half-star.svg';
 import Minus from '@/app/assets/icons/minus.svg';
 import Plus from '@/app/assets/icons/plus.svg';
@@ -82,7 +82,7 @@ const Page = () => {
                 } transition-all`}
                 onClick={() => setSelectedImage(image)}
               >
-                <img
+                <Image
                   src={image}
                   alt={`Thumbnail ${index}`}
                   className="w-full h-full object-cover"
@@ -95,7 +95,7 @@ const Page = () => {
             onMouseMove={handleMouseMove}
             onMouseLeave={resetTransform}
           >
-            <img
+            <Image
               src={selectedImage}
               alt="Main Image"
               className="absolute top-0 left-0 w-full h-full object-cover"
