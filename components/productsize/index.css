@@ -19,7 +19,7 @@
 
 .product-details-section {
   width: 50%;
-  max-width: 590px;
+  max-width: 540px;
 }
 
 .big-image {
@@ -41,10 +41,75 @@
   min-width: 150px;
   height: 154px;
   border-radius: 17px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .three-image > img:hover {
   border: 1px solid #000000;
+  transform: scale(1.2);
+}
+
+.big-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.big-image .large-img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.big-image:hover .large-img {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
+.product-image-section {
+  display: flex;
+  gap: 20px;
+}
+
+.three-image {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.three-image img {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+
+.three-image img:hover {
+  border: 2px solid #007bff; /* Highlight effect */
+}
+
+.big-image {
+  position: relative;
+  width: 500px; /* Adjust based on design */
+  height: 500px;
+  overflow: hidden;
+  cursor: grab;
+  border: 1px solid #ddd;
+}
+
+.big-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease-out;
+  transform-origin: center;
+}
+
+.big-image.zoom img {
+  transform: scale(2); /* Adjust zoom level */
+  cursor: grabbing;
+  transition: none; /* Immediate response during zoom */
 }
 
 .product-details-section > h3 {
@@ -146,7 +211,7 @@
 
 .size-btn > button {
   width: 100%;
-  max-width: 415px;
+  max-width: 365px;
   background: #000000;
   color: #fff;
   padding: 15px 0px;
