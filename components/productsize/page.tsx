@@ -1,32 +1,32 @@
 /** @format */
 
-import React, { useState } from 'react';
-import './index.css';
+import React, { useState } from "react";
+import "./index.css";
 // import BigImage from '@/app/assets/arrivals/compressed/shirtbig.png';
 // import FirstImage from '@/app/assets/arrivals/compressed/shirtbig.png';
 // import SecondImage from '@/app/assets/arrivals/compressed/shirtblacklogo.png';
 // import ThreeImage from '@/app/assets/arrivals/compressed/shirtbrown.png';
-import FullStar from '@/app/assets/arrivals/Full-star.svg'; 
-import HalfStar from '@/app/assets/arrivals/Half-star.svg';
-import Minus from '@/app/assets/icons/minus.svg';
-import Plus from '@/app/assets/icons/plus.svg';
-import Image from 'next/image';
-import { MdOutlineArrowForwardIos } from 'react-icons/md';
+import FullStar from "@/app/assets/arrivals/Full-star.svg";
+import HalfStar from "@/app/assets/arrivals/Half-star.svg";
+import Minus from "@/app/assets/icons/minus.svg";
+import Plus from "@/app/assets/icons/plus.svg";
+import Image from "next/image";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+
 const imageList = [
-  'https://ae01.alicdn.com/kf/H02a1ad888f9d46119eab24d47e4f50f5k/P33-Bluetooth-5-0-Headphone-Good-Sound-Quality-Foldable-Support-TF-Card-Wireless-Sports-Headset-Handsfree.jpg',
-  'https://media.sketchfab.com/models/52d7da884412402eba0d6ce143969b90/thumbnails/38b86078358748dfb2b7ad9e98d0e89d/2642a999cbfa4076b78dff973dea08bf.jpeg',
-  'https://media.sketchfab.com/models/269e7e4a84fe429faa7bfe4069792047/thumbnails/1551456ef80d43a285f47fb3a8428f77/0c831503e2c44ea9a3f67785e858f798.jpeg',
+  "https://ae01.alicdn.com/kf/H02a1ad888f9d46119eab24d47e4f50f5k/P33-Bluetooth-5-0-Headphone-Good-Sound-Quality-Foldable-Support-TF-Card-Wireless-Sports-Headset-Handsfree.jpg",
+  "https://media.sketchfab.com/models/52d7da884412402eba0d6ce143969b90/thumbnails/38b86078358748dfb2b7ad9e98d0e89d/2642a999cbfa4076b78dff973dea08bf.jpeg",
+  "https://media.sketchfab.com/models/269e7e4a84fe429faa7bfe4069792047/thumbnails/1551456ef80d43a285f47fb3a8428f77/0c831503e2c44ea9a3f67785e858f798.jpeg",
 ];
+
+type MouseEventWithTarget = React.MouseEvent<HTMLDivElement, MouseEvent>;
+
 const Page = () => {
   const [isChecked] = useState(false);
 
-  const colors = [
-    '#00FF00', // Green
-    '#FF0000', // Red
-    '#FFFF00', // Yellow
-  ];
+  const colors = ["#00FF00", "#FF0000", "#FFFF00"];
 
-  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedColor, setSelectedColor] = useState("");
   const [selectedImage, setSelectedImage] = useState(imageList[0]);
   const [transform, setTransform] = useState({
     scale: 1,
@@ -34,11 +34,7 @@ const Page = () => {
     translateY: 0,
   });
 
-  const handleMouseMove = (e: {
-    currentTarget: any;
-    clientX: number;
-    clientY: number;
-  }) => {
+  const handleMouseMove = (e: MouseEventWithTarget) => {
     const container = e.currentTarget;
     const rect = container.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -54,9 +50,10 @@ const Page = () => {
     setTransform({ scale: 1, translateX: 0, translateY: 0 });
   };
 
-  const handleColorSelect = (color: React.SetStateAction<string>) => {
+  const handleColorSelect = (color: string) => {
     setSelectedColor(color);
   };
+
   console.log(isChecked);
   return (
     <section className="max-w-[1300px] mx-auto max-[1200px]:px-[10px]">
