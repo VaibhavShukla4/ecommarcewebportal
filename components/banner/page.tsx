@@ -84,7 +84,7 @@ const Page:React.FC = () => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <ShopNowBtn className="shop-now-btn" />
+          <ShopNowBtn className="shop-now-btn text-white" />
 
           <div className="points-section">
             <section className="brands">

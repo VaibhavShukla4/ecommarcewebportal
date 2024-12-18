@@ -5,7 +5,7 @@ import { MONGODB_URI } from '@/app/lib/db';
 import mongoose from 'mongoose';
 import { NextResponse } from 'next/server';
 
-export async function GET() {
+export async function POST() {
   try {
     // Check if already connected to avoid reconnecting in serverless functions
     if (!mongoose.connections[0].readyState) {

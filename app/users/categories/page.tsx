@@ -34,6 +34,8 @@
   const handleColorSelect = (color: React.SetStateAction<string>) => {
     setSelectedColor(color);
   };
+
+  
   return (
     <section className="max-w-[1200px] mx-auto max-[1200px]:px-[10px]">
       <div className="filters my-5"></div>
@@ -242,7 +244,7 @@
             </div>
           </div>
           <div className="grid grid-cols-3 max-[520px]:grid-cols-1 max-[767px]:grid-cols-2 max-[767px]:mx-auto  max-[991px]:grid-cols-2 max-[1200px]:grid-cols-3 gap-6 py-4">
-            <div className="col cards mx-auto">
+            <a href='/users/productdetails' className="col cards mx-auto">
               <Image
                 src={Shirt.src}
                 alt="T-shirt with Tape Details"
@@ -303,7 +305,7 @@
                 </span>
               </div>
               <span className='satoshi font-bold text-[22px] mt-2'>$145  </span>
-            </div>
+            </a>
 
             <div className="col cards mx-auto">
               <Image

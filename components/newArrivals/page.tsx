@@ -1,5 +1,4 @@
 /** @format */
-
 import React, { useRef } from 'react';
 import './index.css';
 import Shirt from '@/app/assets/arrivals/compressed/t-shirt-black.png';
@@ -12,12 +11,14 @@ import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
   const cardsRef = useRef([]);
-
+ const router = useRouter()
   cardsRef.current = [];
 
 
@@ -41,7 +42,7 @@ const Page = () => {
     <section className="new-arrivals">
       <span>NEW ARRIVALS</span>
       <div className="row">
-        <div className="col cards">
+        <Link href='/users/productdetails' className="col cards">
           <Image
             src={Shirt.src}
             alt="T-shirt with Tape Details"
@@ -104,8 +105,8 @@ const Page = () => {
             <h3 id="discount">$120</h3>
             <span>-20%</span>
           </div>
-        </div>
-        <div className="col cards">
+        </Link>
+        <Link href='/users/productdetails' className="col cards">
           <Image
             src={Jeans.src}
             alt="Skinny Fit Jeans"
@@ -166,8 +167,8 @@ const Page = () => {
           <div className="price">
             <h3>$120</h3>
           </div>
-        </div>
-        <div className="col cards">
+        </Link>
+        <Link href='/users/productdetails' className="col cards">
           <Image
             src={Check.src}
             alt="Checkered Shirt"
@@ -228,8 +229,8 @@ const Page = () => {
           <div className="price">
             <h3>$120</h3>
           </div>
-        </div>
-        <div className="col cards">
+        </Link>
+        <Link href='/users/productdetails' className="col cards">
           <Image
             src={Sleeve.src}
             alt="Sleeve Striped T-shirt"
@@ -290,10 +291,11 @@ const Page = () => {
           <div className="price">
             <h3>$120</h3>
           </div>
-        </div>
+        </Link>
       </div>
       <div className="view-btn-container">
-        <button>View All</button>
+        <button onClick={() => router.push('/users/categories')}>
+          View All</button>
       </div>
     </section>
   );

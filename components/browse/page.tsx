@@ -38,7 +38,7 @@ const Page = () => {
         <span>BROWSE BY DRESS STYLE</span>
         <div className="browse-img">
           <div className="image-section">
-            <div id="casual" className='w-[37%]'>
+            <div id="casual" className='w-[39%] max-[991px]:w-[100%] aspect-[2/1] max-[991px]:h-[-webkit-fill-available!important]'>
               <Image
                 src={Casual.src}
                 alt="Casual Style"
@@ -47,12 +47,12 @@ const Page = () => {
                 height={Casual.height}
                 onLoad={() => ScrollTrigger.refresh()} // Refresh ScrollTrigger on image load
                 loading="lazy"
+                className='max-[991px]:h-[100%!important] max-[991px]:max-w-[-webkit-fill-available!important]'
               />
               <span>Casual</span>
             </div>
-            <div id="formal" className='w-[max-content]'>
+            <div id="formal" className='w-[55%] max-[991px]:w-[100%] aspect-[2/1] max-[991px]:h-[-webkit-fill-available!important]'>
               <Image
-              className='h-[-webkit-fill-available!important]'
                 src={Formal.src}
                 alt="Formal Style"
                 layout="responsive"
@@ -60,12 +60,13 @@ const Page = () => {
                 height={Formal.height}
                 onLoad={() => ScrollTrigger.refresh()} // Refresh ScrollTrigger on image load
                 loading="lazy"
+                 className='h-[-webkit-fill-available!important] max-[991px]:h-[100%!important] max-[991px]:max-w-[-webkit-fill-available!important]'
               />
               <span>Formal</span>
             </div>
           </div>
           <div className="image-section">
-            <div id="party">
+            <div id="party" className='w-[60%] max-[991px]:w-[-webkit-fill-available!important] max-[991px]:max-w-[none!important] aspect-[2/1] max-[991px]:h-[-webkit-fill-available!important]'>
               <Image
                 src={Party.src}
                 alt="Party Style"
@@ -74,10 +75,12 @@ const Page = () => {
                 height={Party.height}
                 onLoad={() => ScrollTrigger.refresh()} // Refresh ScrollTrigger on image load
                 loading="lazy"
+                className='max-w-[-webkit-fill-available!important] max-[991px]:max-w-[-webkit-fill-available] max-[991px]:h-[100%!important] max-[991px]:max-w-[-webkit-fill-available!important] max-[991px]:max-h-[-webkit-fill-available!important]'
+                
               />
               <span>Party</span>
             </div>
-            <div  id="gym">
+            <div  id="gym" className='w-[33%] max-[991px]:w-[100%] aspect-[2/1] max-[991px]:h-[-webkit-fill-available!important]'>
               <Image
                 src={Gym.src}
                 alt="Gym Style"
@@ -86,6 +89,7 @@ const Page = () => {
                 height={Gym.height}
                 onLoad={() => ScrollTrigger.refresh()} // Refresh ScrollTrigger on image load
                 loading="lazy"
+                 className='max-w-[-webkit-fill-available!important] max-[991px]:h-[100%!important] max-[991px]:max-w-[-webkit-fill-available!important]'
               />
               <span>Gym</span>
             </div>

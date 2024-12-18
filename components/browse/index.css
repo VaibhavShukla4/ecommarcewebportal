@@ -152,4 +152,7 @@ img {
   .browse-img {
     padding: 0px 10px 60px 10px;
   }
+  .browse > span {
+    font-size: 30px;
+  }
 }

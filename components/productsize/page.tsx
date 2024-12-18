@@ -1,22 +1,27 @@
 /** @format */
 
-import React, { useState } from "react";
-import "./index.css";
-// import BigImage from '@/app/assets/arrivals/compressed/shirtbig.png';
-// import FirstImage from '@/app/assets/arrivals/compressed/shirtbig.png';
-// import SecondImage from '@/app/assets/arrivals/compressed/shirtblacklogo.png';
-// import ThreeImage from '@/app/assets/arrivals/compressed/shirtbrown.png';
-import FullStar from "@/app/assets/arrivals/Full-star.svg";
-import HalfStar from "@/app/assets/arrivals/Half-star.svg";
-import Minus from "@/app/assets/icons/minus.svg";
-import Plus from "@/app/assets/icons/plus.svg";
-import Image from "next/image";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
-
+import React, { useState } from 'react';
+import './index.css';
+import BigImage from '@/app/assets/arrivals/compressed/shirtbig.png';
+import FirstImage from '@/app/assets/arrivals/compressed/shirtbig.png';
+import SecondImage from '@/app/assets/arrivals/compressed/shirtblacklogo.png';
+import ThreeImage from '@/app/assets/arrivals/compressed/shirtbrown.png';
+import Left from '@/app/assets/icons/left-arrow.svg';
+import Right from '@/app/assets/icons/right-arrow.svg';
+import GreenCheck from '@/app/assets/icons/green-check.svg';
+import Filter from '@/app/assets/productsize/svg/filter.svg';
+import FullStar from '@/app/assets/arrivals/Full-star.svg';
+import HalfStar from '@/app/assets/arrivals/Half-star.svg';
+import Minus from '@/app/assets/icons/minus.svg';
+import Plus from '@/app/assets/icons/plus.svg';
+import Image from 'next/image';
+import { MdOutlineArrowForwardIos } from 'react-icons/md';
+import { IoIosArrowDown } from "react-icons/io";
+import TopSelling from "@/components/topSelling/page"
 const imageList = [
-  "https://ae01.alicdn.com/kf/H02a1ad888f9d46119eab24d47e4f50f5k/P33-Bluetooth-5-0-Headphone-Good-Sound-Quality-Foldable-Support-TF-Card-Wireless-Sports-Headset-Handsfree.jpg",
-  "https://media.sketchfab.com/models/52d7da884412402eba0d6ce143969b90/thumbnails/38b86078358748dfb2b7ad9e98d0e89d/2642a999cbfa4076b78dff973dea08bf.jpeg",
-  "https://media.sketchfab.com/models/269e7e4a84fe429faa7bfe4069792047/thumbnails/1551456ef80d43a285f47fb3a8428f77/0c831503e2c44ea9a3f67785e858f798.jpeg",
+  BigImage,
+  ThreeImage,
+  SecondImage,
 ];
 
 type MouseEventWithTarget = React.MouseEvent<HTMLDivElement, MouseEvent>;
@@ -24,15 +29,33 @@ type MouseEventWithTarget = React.MouseEvent<HTMLDivElement, MouseEvent>;
 const Page = () => {
   const [isChecked] = useState(false);
 
-  const colors = ["#00FF00", "#FF0000", "#FFFF00"];
+  const colors = ['#00FF00', '#FF0000', '#FFFF00'];
 
-  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedColor, setSelectedColor] = useState('');
   const [selectedImage, setSelectedImage] = useState(imageList[0]);
   const [transform, setTransform] = useState({
     scale: 1,
     translateX: 0,
     translateY: 0,
   });
+
+    const totalItems = 6; // Total number of items in the carousel
+  const cardWidth = 320; // Width of each card
+  const [virtualIndex, setVirtualIndex] = useState(0);
+
+  const handlePrev = () => {
+    setVirtualIndex((prevIndex) =>
+      prevIndex === 0 ? totalItems - 1 : prevIndex - 1,
+    );
+  };
+
+  const handleNext = () => {
+    setVirtualIndex((prevIndex) =>
+      prevIndex === totalItems - 1 ? 0 : prevIndex + 1,
+    );
+  };
+
+  const translateX = -virtualIndex * cardWidth;
 
   const handleMouseMove = (e: MouseEventWithTarget) => {
     const container = e.currentTarget;
@@ -83,6 +106,8 @@ const Page = () => {
                   src={image}
                   alt={`Thumbnail ${index}`}
                   className="w-full h-full object-cover"
+                  width={203} // Add appropriate dimensions
+                  height={203}
                 />
               </div>
             ))}
@@ -101,6 +126,8 @@ const Page = () => {
                 transition:
                   transform.scale === 1 ? 'transform 0.3s ease-out' : 'none',
               }}
+              width={500} // Example dimensions
+              height={500}
             />
           </div>
         </div>
@@ -231,11 +258,79 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full">
-        <div className="text-[#00000099] satoshi font-normal">Product Details</div>
-        <div className="text-[#00000099] satoshi font-normal">Rating & Reviews</div>
-        <div className="text-[#00000099] satoshi font-normal">FAQs</div>
+      <div className="flex w-full py-5">
+        <div className="text-[#00000099] text-[18px] satoshi font-normal w-[-webkit-fill-available] text-center py-5 cursor-pointer border-bottom-light">
+          Product Details
+        </div>
+        <div className="text-[#000000] text-[18px] satoshi font-[500] w-[-webkit-fill-available] text-center py-5 cursor-pointer border-bottom-dark">
+          Rating & Reviews
+        </div>
+        <div className="text-[#00000099] text-[18px] satoshi font-normal w-[-webkit-fill-available] text-center py-5 cursor-pointer border-bottom-light">FAQs</div>
       </div>
+      <div className="flex justify-between items-center flex-wrap gap-2 mx-auto">
+        <div className="flex gap-2 items-center">
+          <span className='text-[#000000] font-bold satoshi text-[20px]'>All Reviews</span>
+          <span className='text-[#00000099] font-normal satoshi'>(451)</span>
+        </div>
+        <div className="flex items-center flex-wrap gap-2">
+          <span className='bg-[#F0F0F0] w-[fit-content] block px-4 py-4 rounded-full'>
+          <Image
+            src={Filter.src}
+            alt=""
+            width={Filter.width}
+            height={Filter.height}
+            />
+            </span>
+            <span className='bg-[#F0F0F0] flex items-center gap-4 w-[fit-content] px-8 py-4 rounded-full'>
+              <span className='satoshi font-[500]'>Latest</span>
+              <IoIosArrowDown />
+            </span>
+            <span className='bg-black text-white px-8 py-4 rounded-full satoshi'>Write a Review</span>
+        </div>
+      </div>
+     
+        <div className="grid grid-cols-2 gap-4 mt-5 max-[676px]:grid-cols-1">
+        {[...Array(totalItems * 2)].map((_, index) => (
+              <div
+                key={index}
+                className={`card max-w-[700px!important] ${index === totalItems - 1 ? 'active' : ''}`}
+              >
+                <div className="star-rating flex my-2">
+                  {[...Array(5)].map((_, starIndex) => (
+                    <span key={starIndex}>
+                      <Image
+                        src={FullStar.src}
+                        alt="Star"
+                        width={FullStar.width}
+                        height={FullStar.height}
+                        loading="lazy"
+                      />
+                    </span>
+                  ))}
+                </div>
+                <span className='satoshi font-bold flex items-center text-[20px] my-2'>
+                  Sarah M. &nbsp;
+                  <span>
+                    <Image
+                      src={GreenCheck.src}
+                      alt="Verified"
+                      width={GreenCheck.width}
+                      height={GreenCheck.height}
+                      loading="lazy"
+                    />
+                  </span>
+                </span>
+                <p className='text-[#00000099] satoshi font-normal'>
+                  &quot;I&apos;m blown away by the quality and style of the
+                  clothes I received from Shop.co. From casual wear to elegant
+                  dresses, every piece I&apos;ve bought has exceeded my
+                  expectations.&rdquo;
+                </p>
+                <p className='satoshi font-[500] text-[#00000099] text-[18px]'>Posted on August 18, 2023</p>
+              </div>
+            ))}</div>
+            <div className="view-btn-container"><button >Load More Reviews</button></div>
+            <TopSelling />
     </section>
   );
 };
