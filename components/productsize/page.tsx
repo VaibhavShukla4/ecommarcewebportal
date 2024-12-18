@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import './index.css';
 import BigImage from '@/app/assets/arrivals/compressed/shirtbig.png';
-import FirstImage from '@/app/assets/arrivals/compressed/shirtbig.png';
+// import FirstImage from '@/app/assets/arrivals/compressed/shirtbig.png';
 import SecondImage from '@/app/assets/arrivals/compressed/shirtblacklogo.png';
 import ThreeImage from '@/app/assets/arrivals/compressed/shirtbrown.png';
-import Left from '@/app/assets/icons/left-arrow.svg';
-import Right from '@/app/assets/icons/right-arrow.svg';
+// import Left from '@/app/assets/icons/left-arrow.svg';
+// import Right from '@/app/assets/icons/right-arrow.svg';
 import GreenCheck from '@/app/assets/icons/green-check.svg';
 import Filter from '@/app/assets/productsize/svg/filter.svg';
 import FullStar from '@/app/assets/arrivals/Full-star.svg';
@@ -43,19 +43,19 @@ const Page = () => {
   const cardWidth = 320; // Width of each card
   const [virtualIndex, setVirtualIndex] = useState(0);
 
-  const handlePrev = () => {
-    setVirtualIndex((prevIndex) =>
-      prevIndex === 0 ? totalItems - 1 : prevIndex - 1,
-    );
-  };
+  // const handlePrev = () => {
+  //   setVirtualIndex((prevIndex) =>
+  //     prevIndex === 0 ? totalItems - 1 : prevIndex - 1,
+  //   );
+  // };
 
-  const handleNext = () => {
-    setVirtualIndex((prevIndex) =>
-      prevIndex === totalItems - 1 ? 0 : prevIndex + 1,
-    );
-  };
+  // const handleNext = () => {
+  //   setVirtualIndex((prevIndex) =>
+  //     prevIndex === totalItems - 1 ? 0 : prevIndex + 1,
+  //   );
+  // };
 
-  const translateX = -virtualIndex * cardWidth;
+  // const translateX = -virtualIndex * cardWidth;
 
   const handleMouseMove = (e: MouseEventWithTarget) => {
     const container = e.currentTarget;
