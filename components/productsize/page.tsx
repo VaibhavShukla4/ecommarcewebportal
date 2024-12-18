@@ -40,8 +40,8 @@ const Page = () => {
   });
 
     const totalItems = 6; // Total number of items in the carousel
-  const cardWidth = 320; // Width of each card
-  const [virtualIndex, setVirtualIndex] = useState(0);
+  // const cardWidth = 320; // Width of each card
+  // const [virtualIndex, setVirtualIndex] = useState(0);
 
   // const handlePrev = () => {
   //   setVirtualIndex((prevIndex) =>
