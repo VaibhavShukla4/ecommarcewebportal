@@ -12,7 +12,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Twitter from '@/app/assets/icons/twitter';
 import { useRouter } from 'next/navigation';
-const page : React.FC= () => {
+const Page : React.FC= () => {
   const router = useRouter()
   return (
     <section className="footer-container">
@@ -217,4 +217,4 @@ const page : React.FC= () => {
   );
 };
 
-export default page;
+export default Page;
