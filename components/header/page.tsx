@@ -8,11 +8,12 @@ import Profile from '@/app/assets/header/profile';
 import Menu from '@/app/assets/header/menu';
 import Close from '@/app/assets/header/close';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Page: React.FC = () => {
     const [showHeader, setShowHeader] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
-
+  const router = useRouter()
     const handleOpenSidebar = () => {
         setIsAnimating(true); // Start animation
         setShowHeader(true); // Set to open state
@@ -38,7 +39,7 @@ const Page: React.FC = () => {
     <header>
       <section className="big-header">
         <div className="logo">
-          <h3 className='integral_cf'>SHOP.CO</h3>
+          <h3 className='integral_cf cursor-pointer' onClick={() => router.push('/')}>SHOP.CO</h3>
         </div>
         <div className="navigation">
           <span className="flex">
@@ -56,7 +57,7 @@ const Page: React.FC = () => {
           <input type="text" placeholder="Search for products..." />
         </div>
         <div className="profile-cart-section">
-          <span><Cart /></span>
+          <span className='cursor-pointer' onClick={() => router.push('/users/cart')}><Cart /></span>
           <span><Profile /></span>
         </div>
       </section>

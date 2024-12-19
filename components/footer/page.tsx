@@ -11,7 +11,9 @@ import GPay from '@/app/assets/icons/googlepay.svg';
 import Link from 'next/link';
 import Image from 'next/image';
 import Twitter from '@/app/assets/icons/twitter';
+import { useRouter } from 'next/navigation';
 const page : React.FC= () => {
+  const router = useRouter()
   return (
     <section className="footer-container">
       <div className="black-section">
@@ -34,7 +36,7 @@ const page : React.FC= () => {
       <div className="shop-details">
         <div className="shop-link">
           <div className="social">
-            <h3 className='integral_cf'>SHOP.CO</h3>
+            <h3 className='integral_cf cursor-pointer' onClick={() => router.push('/')}>SHOP.CO</h3>
             <p>
               We have clothes that suits your style and which you’re proud to
               wear. From women to men.
