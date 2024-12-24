@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
 import SkeletonLoader from './../SkeletonLoader/page';
-import BannerImageSmall from '@/app/assets/arrivals/compressed/BannerImageSmall.webp'
+import BannerImageSmall from '@/app/assets/arrivals/compressed/banner.webp'
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import BigStar from '@/app/assets/banner/bigStar';

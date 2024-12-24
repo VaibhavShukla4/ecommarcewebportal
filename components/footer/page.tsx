@@ -135,7 +135,7 @@ const Page : React.FC= () => {
           </div>
           <div className="company">
             <h5>Help</h5>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/contact'}>
               Customer Support
             </Link>
             <Link className="link" href={'/'}>
