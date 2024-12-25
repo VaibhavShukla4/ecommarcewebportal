@@ -9,6 +9,7 @@ import Menu from '@/app/assets/header/menu';
 import Close from '@/app/assets/header/close';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Page: React.FC = () => {
     const [showHeader, setShowHeader] = useState(false);
@@ -42,15 +43,15 @@ const Page: React.FC = () => {
           <h3 className='integral_cf cursor-pointer' onClick={() => router.push('/')}>SHOP.CO</h3>
         </div>
         <div className="navigation">
-          <span className="flex">
+          <Link className="flex" href={'/users/comming'}>
             Shop &nbsp;
             <span className="flex items-center">
               <DownArrow />
             </span>
-          </span>
-          <span>On Sale</span>
-          <span>New Arrivals</span>
-          <span>Brands</span>
+          </Link>
+          <Link href={'/users/comming'}>On Sale</Link>
+          <Link href={'/users/comming'}>New Arrivals</Link>
+          <Link href={'/users/comming'}>Brands</Link>
         </div>
         <div className="search-bar">
           <span><SearchIcon /></span>

@@ -120,16 +120,16 @@ const Page : React.FC= () => {
           </div>
           <div className="company">
             <h5>Company</h5>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/about'}>
               About
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Features
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Works
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Career
             </Link>
           </div>
@@ -138,43 +138,43 @@ const Page : React.FC= () => {
             <Link className="link" href={'/users/contact'}>
               Customer Support
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Delivery Details
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Terms & Conditions
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Privacy Policy
             </Link>
           </div>
           <div className="company">
             <h5>FAQ</h5>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Account
             </Link>
             <Link className="link" href={'/'}>
               Manage Deliveries
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Orders
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Payments
             </Link>
           </div>
           <div className="company">
             <h5>Resources</h5>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Free eBooks
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Development Tutorial
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               How to - Blog
             </Link>
-            <Link className="link" href={'/'}>
+            <Link className="link" href={'/users/comming'}>
               Youtube Playlist
             </Link>
           </div>

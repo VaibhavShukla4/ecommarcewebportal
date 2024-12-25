@@ -408,6 +408,10 @@ a {
   border-bottom: 1px solid rgb(187, 184, 184);
 }
 
+.border-gray {
+  border: 1.5px solid #00000030;
+}
+
 /* new arrivals  comman style */
 @media (prefers-color-scheme: dark) {
   html {
